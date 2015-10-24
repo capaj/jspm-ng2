@@ -1,6 +1,5 @@
-import {bootstrap, ComponentAnnotation as Component, ViewAnnotation as View, Injectable} from 'angular2/angular2';
-import {NgIf} from 'angular2/angular2';
-
+import {bootstrap, ComponentAnnotation as Component, ViewAnnotation as View, Injectable} from 'angular2/angular2'
+import {NgIf} from 'angular2/angular2'
 
 @Injectable()
 class ImagesFactory {
@@ -10,7 +9,7 @@ class ImagesFactory {
       .then(response => response.json())
       .then(json => json.data.children
         .map(a => a.data.url)
-        .filter(a => /\.(gif|jpg|png)$/.exec(a)));
+        .filter(a => /\.(gif|jpg|png)$/.exec(a)))
 
   }
 }
@@ -20,7 +19,7 @@ class ImagesFactory {
     appInjector: [ImagesFactory]
 })
 @View({
-  templateUrl: "proj/hello.html",
+  templateUrl: "src/hello.html",
   directives: [NgIf]
 })
 class MyAppComponent {
@@ -28,9 +27,14 @@ class MyAppComponent {
     img: string;
 
     constructor(images: ImagesFactory) {
-      this.name = "world";
-      images.getUrls().then(ar => this.img = ar[0]);
+      this.name = "world"
+      images.getUrls().then(ar => this.img = ar[0])
     }
 }
 
 bootstrap(MyAppComponent);
+hr && hr.on('change', (fileName) => {
+  if (fileName.indexOf('html') !== -1) {
+    bootstrap(MyAppComponent) // would love to do this, but I get https://gist.github.com/capaj/bcd2c0d28264bc4c7c50
+  }
+})

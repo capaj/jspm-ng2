@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ng2 <3 jspm</title>
+  </head>
+  <body>
+    <my-app></my-app>
+
+    <!-- DEV MODE -->
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      var readyForMainLoad
+      if (location.origin.match(/localhost/)) {
+       System.trace = true
+       readyForMainLoad = System.import('capaj/jspm-hot-reloader').then(function(HotReloader){
+         hr = new HotReloader.default('http://localhost:9089')  // chokidar-socket-emitter port
+       })
+      }
+      Promise.resolve(readyForMainLoad).then(() => {
+        System.import('reflect-metadata')
+        .then(function(){System.import('zone.js')})
+        .then(function(){System.import('src/app')})
+      })
+    </script>
+
+  </body>
+</html>
