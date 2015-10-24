@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "postinstall": "jspm install",
+    "start": "node server",
+    "test": "node run-tests",
+    "build": "jspm bundle app --inject --minify"
+  },
   "dependencies": {
     "http-server": "^0.8.5",
     "chokidar-socket-emitter": "^0.2.0"
