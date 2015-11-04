@@ -7,15 +7,15 @@
   },
   "dependencies": {
     "http-server": "^0.8.5",
-    "chokidar-socket-emitter": "^0.2.0"
+    "chokidar-socket-emitter": "^0.3.0"
   },
   "jspm": {
     "directories": {
       "baseURL": "public"
     },
     "dependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.44",
-      "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@^0.2.1",
+      "angular2": "npm:angular2@^2.0.0-alpha.45",
+      "capaj/jspm-hot-reloader": "github:capaj/jspm-hot-reloader@^0.3.0",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "zone.js": "npm:zone.js@^0.5.8"
     },
