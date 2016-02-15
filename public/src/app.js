@@ -35,6 +35,10 @@ class MyAppComponent {
 bootstrap(MyAppComponent);
 hr && hr.on('change', (fileName) => {
   if (fileName.indexOf('html') !== -1) {
-    bootstrap(MyAppComponent) // would love to do this, but I get https://gist.github.com/capaj/bcd2c0d28264bc4c7c50
+    var newBody = document.createElement('body')
+    newBody.appendChild(document.createElement('my-app'))
+    document.body = newBody;
+    
+    bootstrap(MyAppComponent);
   }
 })
