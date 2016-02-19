@@ -1,5 +1,6 @@
-import {bootstrap, ComponentAnnotation as Component, ViewAnnotation as View, Injectable} from 'angular2/angular2'
-import {NgIf} from 'angular2/angular2'
+import {bootstrap} from 'angular2/platform/browser';
+import {Component, Injectable} from 'angular2/core';
+
 
 @Injectable()
 class ImagesFactory {
@@ -16,18 +17,17 @@ class ImagesFactory {
 
 @Component({
     selector: 'my-app',
-    appInjector: [ImagesFactory]
+    providers: [ImagesFactory],
+    templateUrl: "src/hello.html"
 })
-@View({
-  templateUrl: "src/hello.html",
-  directives: [NgIf]
-})
+
 class MyAppComponent {
-    name: string;
-    img: string;
+    name: String;
+    img: String;
 
     constructor(images: ImagesFactory) {
       this.name = "world"
+        this.img = "oo";
       images.getUrls().then(ar => this.img = ar[0])
     }
 }
