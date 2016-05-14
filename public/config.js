@@ -15,6 +15,7 @@ System.config({
   map: {
     "angular2": "npm:angular2@2.0.0-beta.7",
     "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.6",
+    "crypto": "npm:crypto-browserify@3.11.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "traceur": "github:jmcriffey/bower-traceur@0.0.93",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93",
@@ -253,6 +254,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:isarray@1.0.0": {
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:miller-rabin@4.0.0": {
       "bn.js": "npm:bn.js@4.10.3",
