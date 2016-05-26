@@ -1,6 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {Component, Injectable} from 'angular2/core';
-
+import template from './hello.html!text'
 
 @Injectable()
 class ImagesFactory {
@@ -18,7 +18,7 @@ class ImagesFactory {
 @Component({
     selector: 'my-app',
     providers: [ImagesFactory],
-    templateUrl: "src/hello.html"
+    template: template
 })
 
 class MyAppComponent {
@@ -27,18 +27,8 @@ class MyAppComponent {
 
     constructor(images: ImagesFactory) {
       this.name = "world"
-        this.img = "oo";
       images.getUrls().then(ar => this.img = ar[0])
     }
 }
 
 bootstrap(MyAppComponent);
-hr && hr.on('change', (fileName) => {
-  if (fileName.indexOf('html') !== -1) {
-    var newBody = document.createElement('body')
-    newBody.appendChild(document.createElement('my-app'))
-    document.body = newBody;
-    
-    bootstrap(MyAppComponent);
-  }
-})

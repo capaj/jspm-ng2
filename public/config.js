@@ -14,13 +14,14 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-beta.7",
-    "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.6",
+    "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.9",
     "crypto": "npm:crypto-browserify@3.11.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
+    "text": "github:systemjs/plugin-text@0.0.8",
     "traceur": "github:jmcriffey/bower-traceur@0.0.93",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.93",
     "zone.js": "npm:zone.js@0.5.15",
-    "github:capaj/systemjs-hot-reloader@0.5.6": {
+    "github:capaj/systemjs-hot-reloader@0.5.9": {
       "debug": "npm:debug@2.2.0",
       "socket.io-client": "github:socketio/socket.io-client@1.4.5",
       "weakee": "npm:weakee@1.0.0"

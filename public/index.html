@@ -21,7 +21,12 @@
       Promise.resolve(readyForMainLoad).then(() => {
         System.import('reflect-metadata')
         .then(function(){System.import('zone.js')})
-        .then(function(){System.import('src/app')})
+        .then(function(){
+          System.import('src/app').then(() => {
+            hr && hr.hotReload('src/app')
+            
+          })
+        })
       })
     </script>
 

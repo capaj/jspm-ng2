@@ -1,4 +1,2 @@
-<style>@import "hello.css";</style>
-
-<p>Hello, {{name}}!</p>
-<img [src]="img">
+<p>Hello {{name}}, try change the template hello.html or app.js to see hot-reload in action!</p>
+<img *ngIf="img" [src]="img">
